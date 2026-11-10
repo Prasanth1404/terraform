@@ -4,11 +4,11 @@ resource "aws_eks_node_group" "lwp-nodes-tf" {
   node_group_name = "lwp-nodes"
   node_role_arn   = aws_iam_role.lwp-eks-node-role-tf.arn
 
-  subnet_ids = [
-    aws_subnet.lwp-pub-sub-1-tf.id,
-    aws_subnet.lwp-pub-sub-2-tf.id,
-    aws_subnet.lwp-pub-sub-3-tf.id,
-  ]
+    subnet_ids = [
+      data.aws_subnet.lwp-pub-sub-1.id,
+      data.aws_subnet.lwp-pub-sub-2.id,
+      data.aws_subnet.lwp-pub-sub-3.id,
+    ]
 
   ami_type       = "AL2023_x86_64_STANDARD"
   capacity_type  = "ON_DEMAND"
@@ -16,9 +16,9 @@ resource "aws_eks_node_group" "lwp-nodes-tf" {
   disk_size      = 20
 
   scaling_config {
-    desired_size = 3
-    min_size     = 3
-    max_size     = 4
+    desired_size = 2
+    min_size     = 2
+    max_size     = 3
   }
 
   update_config {

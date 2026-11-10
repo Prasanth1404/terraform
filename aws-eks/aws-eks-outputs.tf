@@ -10,5 +10,5 @@ output "configure_kubectl" {
 
 # 3. VPC ID
 output "vpc_id" {
-  value = aws_vpc.lwp-vpc-tf.id
+  value = data.aws_vpc.lwp-vpc.id
 }

@@ -6,9 +6,9 @@ resource "aws_eks_cluster" "lwp-eks-tf" {
 
   vpc_config {
     subnet_ids = [
-      aws_subnet.lwp-pub-sub-1-tf.id,
-      aws_subnet.lwp-pub-sub-2-tf.id,
-      aws_subnet.lwp-pub-sub-3-tf.id,
+      data.aws_subnet.lwp-pub-sub-1.id,
+      data.aws_subnet.lwp-pub-sub-2.id,
+      data.aws_subnet.lwp-pub-sub-3.id,
     ]
     endpoint_public_access  = true
     endpoint_private_access = true
