@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 800" width="1100" height="800" font-family="Segoe UI, Helvetica, Arial, sans-serif" xmlns:c2pa="http://c2pa.org/manifest">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M1 1L9 5L1 9z" fill="#5B6472"/>
+    </marker>
+    <marker id="r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M1 1L9 5L1 9z" fill="#DD344C"/>
+    </marker>
+  </defs>
+  <rect width="1100" height="800" fill="#FFFFFF"/>
+
+  <!-- Top actors -->
+  <rect x="340" y="24" width="330" height="62" rx="12" fill="#F1F3F5" stroke="#5B6472" stroke-width="1.5"/>
+  <text x="505" y="50" text-anchor="middle" font-size="15" font-weight="700" fill="#2B2F36">You (kubectl / Terraform)</text>
+  <text x="505" y="71" text-anchor="middle" font-size="12" fill="#5B6472">sgprasanth-terraform + root · cluster admin</text>
+
+  <rect x="720" y="24" width="310" height="62" rx="12" fill="#F1F3F5" stroke="#5B6472" stroke-width="1.5"/>
+  <text x="875" y="50" text-anchor="middle" font-size="15" font-weight="700" fill="#2B2F36">Website users</text>
+  <text x="875" y="71" text-anchor="middle" font-size="12" fill="#5B6472">api / sf / argocd .prasanth.space</text>
+
+
+  <!-- IAM -->
+  <rect x="40" y="140" width="240" height="300" rx="14" fill="#FDECEF" stroke="#DD344C" stroke-width="2"/>
+  <text x="160" y="170" text-anchor="middle" font-size="16" font-weight="700" fill="#A3152B">IAM roles</text>
+  <rect x="60" y="188" width="200" height="62" rx="10" fill="#FFFFFF" stroke="#DD344C" stroke-width="1.5"/>
+  <text x="160" y="214" text-anchor="middle" font-size="13" font-weight="700" fill="#A3152B">lwp-eks-cluster-role</text>
+  <text x="160" y="233" text-anchor="middle" font-size="11" fill="#B8293F">AmazonEKSClusterPolicy</text>
+  <rect x="60" y="270" width="200" height="62" rx="10" fill="#FFFFFF" stroke="#DD344C" stroke-width="1.5"/>
+  <text x="160" y="296" text-anchor="middle" font-size="13" font-weight="700" fill="#A3152B">lwp-eks-node-role</text>
+  <text x="160" y="315" text-anchor="middle" font-size="11" fill="#B8293F">Worker · CNI · ECR read</text>
+  <rect x="60" y="352" width="200" height="62" rx="10" fill="#FFFFFF" stroke="#DD344C" stroke-width="1.5"/>
+  <text x="160" y="378" text-anchor="middle" font-size="13" font-weight="700" fill="#A3152B">lwp-ebs-csi-role</text>
+  <text x="160" y="397" text-anchor="middle" font-size="11" fill="#B8293F">EBS CSI · Pod Identity</text>
+
+  <!-- data sources -->
+  <rect x="40" y="470" width="240" height="110" rx="14" fill="#F8F5FF" stroke="#8C4FFF" stroke-width="2" stroke-dasharray="7 5"/>
+  <text x="160" y="500" text-anchor="middle" font-size="15" font-weight="700" fill="#5A2EB8">From aws-common</text>
+  <text x="160" y="524" text-anchor="middle" font-size="12" fill="#6B4BC2">subnets for cluster + nodes:</text>
+  <text x="160" y="543" text-anchor="middle" font-size="12" fill="#6B4BC2">lwp-vpc</text>
+  <text x="160" y="562" text-anchor="middle" font-size="12" fill="#6B4BC2">lwp-pub-sub-1 / 2 / 3</text>
+
+  <!-- EKS cluster -->
+  <rect x="310" y="130" width="750" height="500" rx="16" fill="#FFF5EB" stroke="#ED7100" stroke-width="2.5"/>
+  <text x="332" y="160" font-size="18" font-weight="700" fill="#A34E00">EKS · lwp-eks-cluster</text>
+  <text x="560" y="160" font-size="13" fill="#B85A00">v1.36 · Auto Mode OFF · auth: EKS API</text>
+
+  <rect x="340" y="185" width="330" height="62" rx="10" fill="#FFFFFF" stroke="#ED7100" stroke-width="2"/>
+  <text x="505" y="211" text-anchor="middle" font-size="15" font-weight="700" fill="#A34E00">Control plane</text>
+  <text x="505" y="231" text-anchor="middle" font-size="12" fill="#B85A00">Managed by AWS · API server, etcd</text>
+
+  <rect x="720" y="185" width="310" height="62" rx="10" fill="#FFFFFF" stroke="#7AA116" stroke-width="2"/>
+  <text x="875" y="211" text-anchor="middle" font-size="15" font-weight="700" fill="#3B6D11">Network Load Balancer</text>
+  <text x="875" y="231" text-anchor="middle" font-size="12" fill="#4F7A1F">Created by ingress-nginx</text>
+
+  <line x1="505" y1="247" x2="505" y2="278" stroke="#5B6472" stroke-width="2" marker-end="url(#a)"/>
+  <line x1="875" y1="247" x2="875" y2="278" stroke="#5B6472" stroke-width="2" marker-end="url(#a)"/>
+
+  <!-- Node group -->
+  <rect x="340" y="280" width="690" height="170" rx="12" fill="#EAF3FB" stroke="#147EBA" stroke-width="2"/>
+  <text x="360" y="305" font-size="15" font-weight="700" fill="#0D5A8C">Managed node group · lwp-nodes</text>
+  <text x="1010" y="305" text-anchor="end" font-size="12" fill="#147EBA">t3.large × 3 · min 3 · max 4 · AL2023</text>
+  <g>
+    <rect x="360" y="322" width="200" height="108" rx="10" fill="#FFFFFF" stroke="#147EBA" stroke-width="1.5"/>
+    <text x="460" y="356" text-anchor="middle" font-size="15" font-weight="700" fill="#0D5A8C">Node 1</text>
+    <text x="460" y="380" text-anchor="middle" font-size="12" fill="#147EBA">lwp-pub-sub-1</text>
+    <text x="460" y="400" text-anchor="middle" font-size="12" fill="#147EBA">ap-south-1a</text>
+    <rect x="585" y="322" width="200" height="108" rx="10" fill="#FFFFFF" stroke="#147EBA" stroke-width="1.5"/>
+    <text x="685" y="356" text-anchor="middle" font-size="15" font-weight="700" fill="#0D5A8C">Node 2</text>
+    <text x="685" y="380" text-anchor="middle" font-size="12" fill="#147EBA">lwp-pub-sub-2</text>
+    <text x="685" y="400" text-anchor="middle" font-size="12" fill="#147EBA">ap-south-1b</text>
+    <rect x="810" y="322" width="200" height="108" rx="10" fill="#FFFFFF" stroke="#147EBA" stroke-width="1.5"/>
+    <text x="910" y="356" text-anchor="middle" font-size="15" font-weight="700" fill="#0D5A8C">Node 3</text>
+    <text x="910" y="380" text-anchor="middle" font-size="12" fill="#147EBA">lwp-pub-sub-3</text>
+    <text x="910" y="400" text-anchor="middle" font-size="12" fill="#147EBA">ap-south-1c</text>
+  </g>
+
+  <!-- Add-ons -->
+  <rect x="340" y="470" width="690" height="130" rx="12" fill="#FFFFFF" stroke="#ED7100" stroke-width="1.5" stroke-dasharray="7 5"/>
+  <text x="360" y="495" font-size="15" font-weight="700" fill="#A34E00">EKS add-ons</text>
+  <g font-size="12" font-weight="600" text-anchor="middle" fill="#7A3B00">
+    <rect x="360" y="508" width="155" height="34" rx="17" fill="#FFE8D1" stroke="#ED7100"/><text x="437" y="530">VPC CNI</text>
+    <rect x="525" y="508" width="155" height="34" rx="17" fill="#FFE8D1" stroke="#ED7100"/><text x="602" y="530">kube-proxy</text>
+    <rect x="690" y="508" width="155" height="34" rx="17" fill="#FFE8D1" stroke="#ED7100"/><text x="767" y="530">Pod Identity Agent</text>
+    <rect x="855" y="508" width="155" height="34" rx="17" fill="#FFE8D1" stroke="#ED7100"/><text x="932" y="530">CoreDNS</text>
+    <rect x="360" y="552" width="155" height="34" rx="17" fill="#FFE8D1" stroke="#ED7100"/><text x="437" y="574">EBS CSI driver</text>
+    <rect x="525" y="552" width="155" height="34" rx="17" fill="#FFE8D1" stroke="#ED7100"/><text x="602" y="574">metrics-server</text>
+    <rect x="690" y="552" width="155" height="34" rx="17" fill="#FFE8D1" stroke="#ED7100"/><text x="767" y="574">cert-manager</text>
+  </g>
+
+  <!-- IAM links -->
+  <path d="M260 219 H338" fill="none" stroke="#DD344C" stroke-width="1.8" stroke-dasharray="6 4" marker-end="url(#r)"/>
+  <path d="M260 301 H338" fill="none" stroke="#DD344C" stroke-width="1.8" stroke-dasharray="6 4" marker-end="url(#r)"/>
+  <path d="M260 383 H295 V569 H358" fill="none" stroke="#DD344C" stroke-width="1.8" stroke-dasharray="6 4" marker-end="url(#r)"/>
+
+  <!-- EBS -->
+  <line x1="437" y1="586" x2="437" y2="668" stroke="#5B6472" stroke-width="2" marker-end="url(#a)"/>
+  <rect x="340" y="670" width="300" height="62" rx="12" fill="#EAF6DE" stroke="#7AA116" stroke-width="2"/>
+  <text x="490" y="696" text-anchor="middle" font-size="15" font-weight="700" fill="#2F5A0C">EBS gp3 volumes</text>
+  <text x="490" y="716" text-anchor="middle" font-size="12" fill="#3B6D11">MySQL data · product images</text>
+
+  <!-- top arrows (drawn last so they stay visible) -->
+  <line x1="505" y1="86" x2="505" y2="183" stroke="#5B6472" stroke-width="2" marker-end="url(#a)"/>
+  <line x1="875" y1="86" x2="875" y2="183" stroke="#5B6472" stroke-width="2" marker-end="url(#a)"/>
+
+  <!-- Legend -->
+  <g font-size="12" fill="#2B2F36">
+    <rect x="680" y="676" width="16" height="16" rx="3" fill="#FFF5EB" stroke="#ED7100"/><text x="702" y="689">EKS / add-ons</text>
+    <rect x="820" y="676" width="16" height="16" rx="3" fill="#EAF3FB" stroke="#147EBA"/><text x="842" y="689">Compute (EC2)</text>
+    <rect x="680" y="706" width="16" height="16" rx="3" fill="#FDECEF" stroke="#DD344C"/><text x="702" y="719">IAM permission</text>
+    <rect x="820" y="706" width="16" height="16" rx="3" fill="#F8F5FF" stroke="#8C4FFF" stroke-dasharray="3 2"/><text x="842" y="719">Read from aws-common</text>
+  </g>
+<metadata><c2pa:manifest>AAAWgmp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAABZcanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46YzJwYTozYmZhNjQzMy0zOGZkLTRlNTQtYWQ2OS03YzA5YTYzZTU1YzkAAAADl2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAALxqdW1iAAAARGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaW5ncmVkaWVudC52MwAAAAAYYzJzaLj/Vu26elmZCsFkvRlceL8AAABwY2JvcqNpZGM6Zm9ybWF0bWltYWdlL3N2Zyt4bWxqaW5zdGFuY2VJRHgseG1wOmlpZDo0NThjNTQ3Ny0yNWQ5LTRlMjItYTA3YS0wOWI4ZTY1YTEyMmJscmVsYXRpb25zaGlwaHBhcmVudE9mAAAB4mp1bWIAAABBanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5hY3Rpb25zLnYyAAAAABhjMnNodVidbp1wHlH7OiCuvnQLqgAAAZljYm9yomdhY3Rpb25zgqJmYWN0aW9ua2MycGEub3BlbmVkanBhcmFtZXRlcnOha2luZ3JlZGllbnRzgaJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFggD/iwKqJ3a7+C8wtN1R+GoIkeXt3OEB5wKC6cY7sUjrSkZmFjdGlvbngdY29tLmFudGhyb3BpYy5jbGF1ZGUucHJvdmlkZWRqcGFyYW1ldGVyc6F4H2NvbS5hbnRocm9waWMub3JpZ2luLWNvbmZpZGVuY2VndW5rbm93bmtkZXNjcmlwdGlvbnhmQ2xhdWRlIHByb3ZpZGVkIHRoaXMgZmlsZSBhdCB0aGUgcmVxdWVzdCBvZiBhIHVzZXIgYW5kIG1heSBoYXZlIGNyZWF0ZWQgb3IgbW9kaWZpZWQgdGhlIGZpbGUgY29udGVudHMubXNvZnR3YXJlQWdlbnShZG5hbWVmQ2xhdWRlcmFsbEFjdGlvbnNJbmNsdWRlZPUAAADIanVtYgAAAEBqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmhhc2guZGF0YQAAAAAYYzJzaL9oYdJLvc9saeux4O1nJQEAAACAY2JvcqVjYWxnZnNoYTI1NmNwYWRMAAAAAAAAAAAAAAAAZGhhc2hYIOnTINqgZdkYYmkNeZU1ZAgD974kaPgOYTanCq1w2NNJZG5hbWVuanVtYmYgbWFuaWZlc3RqZXhjbHVzaW9uc4GiZXN0YXJ0GSMSZmxlbmd0aBkeBAAAAj5qdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACD2Nib3KlY2FsZ2ZzaGEyNTZpc2lnbmF0dXJleE1zZWxmI2p1bWJmPS9jMnBhL3VybjpjMnBhOjNiZmE2NDMzLTM4ZmQtNGU1NC1hZDY5LTdjMDlhNjNlNTVjOS9jMnBhLnNpZ25hdHVyZWppbnN0YW5jZUlEeCx4bXA6aWlkOmQ5NmJhNTI3LWU5ZDAtNDdhOC1hZGFkLWE2Y2ZkZmUzOGI1MnJjcmVhdGVkX2Fzc2VydGlvbnODomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCAP+LAqondrv4LzC03VH4agiR5e3c4QHnAoLpxjuxSOtKJjdXJseCpzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFjdGlvbnMudjJkaGFzaFggMx7FRQmnmVar+vqmabJrDCOAMBA1OPCp6O9SwdI29ZyiY3VybHgpc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5oYXNoLmRhdGFkaGFzaFgg/764+sRTCgq6qjptKVzX91en2MY+z9AfQjlZO6OkYSN0Y2xhaW1fZ2VuZXJhdG9yX2luZm+jZG5hbWVvQW50aHJvcGljIEZpbGVzZ3ZlcnNpb25lMS4wLjBrc3BlY1ZlcnNpb25lMi40LjAAABA4anVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABAIY2JvctKEWQISogEmGCFZAgowggIGMIIBjaADAgECAhRA5aAK7sI50L64g/oGQgU9Z1UTADAKBggqhkjOPQQDAzBJMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEuMCwGA1UEAxMlQW50aHJvcGljIENvbnRlbnQgQ3JlZGVudGlhbHMgUm9vdCBDQTAeFw0yNjA4MDcxODQzNTZaFw0yODA4MDYxOTQzNTZaMEQxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMSkwJwYDVQQDEyBBbnRocm9waWMgQ2xhdWRlIENvbnRlbnQgU2lnbmluZzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJh6CmvLUBgFFNU0vUKlOVtE6djd17L5SuwX0LemFisBM3dkd/3cyjxFA3Qo5S46fX0/ihY0VZ7mfb9KF703t5OjWDBWMA4GA1UdDwEB/wQEAwIHgDAVBgNVHSUEDjAMBgorBgEEAYPoXgIBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUzlHiBIFOZFsj+OPEz5o+nMHXXMIwCgYIKoZIzj0EAwMDZwAwZAIwMXMdFJ4BetLLVY7ORuE9noqbbAZOZn/aArXyTwFAZfKrPzxF2vPoJNf1+UCdg1XGAjBwX1zd9WGqYkqmL5SFqw1QySjr1zJfpJM9+1rdDwSPLMOPOjKuiXjoU/pUUeG9RwmhY3BhZFkNngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPZYQKI0UyhNIwtOQPJ7xdMlLQCXF2W87LIMXcJk68G6ANrgNH7OD1VE17Hpbg/f9uLue6TPwP70rOyYR0FFq0OpWK0=</c2pa:manifest></metadata></svg>
