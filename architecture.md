@@ -1,4 +1,4 @@
-# LWP Seafood Shop: Terraform Architecture
+# Terraform Architecture
 
 ## 1. aws-common: VPC architecture
 
